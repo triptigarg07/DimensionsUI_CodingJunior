@@ -1259,7 +1259,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
-            className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left mx-auto max-w-2xl"
+            className="glass-effect rounded-2xl p-3 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left mx-auto max-w-2xl w-full"
           >
             <div className="font-semibold text-white text-lg mb-1 flex items-center gap-2">
               <span className="text-xl">⏳</span> Cycles
@@ -1268,7 +1268,7 @@ export default function Home() {
               Goal-focused efficiency for sustained productivity.
             </div>
             {/* Floating stack of cycle cards */}
-            <div className="relative flex flex-col items-center justify-center h-40 sm:h-48 lg:h-52 w-full">
+            <div className="relative flex flex-col items-center justify-center h-40 sm:h-48 lg:h-52 w-full px-2 sm:px-0">
               {[2, 1, 0].map((i) => (
                 <motion.div
                   key={i}
@@ -1276,7 +1276,7 @@ export default function Home() {
                   whileInView={{ opacity: 0.3 + 0.35 * i, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.1 * i }}
                   viewport={{ once: true }}
-                  className={`absolute left-1/2 top-1/2 w-64 sm:w-72 lg:w-80 max-w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-dark-900/80 border border-white/10 shadow-lg transition-all duration-300 ${
+                  className={`absolute left-1/2 top-1/2 w-56 sm:w-72 lg:w-80 max-w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-dark-900/80 border border-white/10 shadow-lg transition-all duration-300 ${
                     i === 2
                       ? "z-30 scale-105 opacity-100"
                       : i === 1
@@ -1321,7 +1321,7 @@ export default function Home() {
       </section>
 
       {/* Deployments Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-dark-900 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-8 bg-dark-900 relative overflow-hidden">
         {/* Subtle background dots */}
         <motion.svg
           className="absolute inset-0 w-full h-full z-0"
@@ -1358,21 +1358,21 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center mb-12"
+            className="flex flex-col items-center mb-8 sm:mb-12"
           >
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 via-yellow-300 to-purple-400 flex items-center justify-center shadow-lg">
                 <span className="text-3xl">☁️</span>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               All of your deployments
               <br />
               <span className="bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 bg-clip-text text-transparent">
                 in one place.
               </span>
             </h2>
-            <p className="text-lg text-gray-300 mb-2">
+            <p className="text-base sm:text-lg text-gray-300 mb-2">
               View, manage, and scale your cloud – all from Dimension.
             </p>
             <div className="flex items-center justify-center gap-2 text-gray-400 text-sm mb-2">
@@ -1383,14 +1383,14 @@ export default function Home() {
               <span>anytime to get started</span>
             </div>
           </motion.div>
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* Multi-cloud Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left"
+              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left w-full"
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl sm:text-2xl">☁️</span>
@@ -1440,7 +1440,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left relative overflow-hidden"
+              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left relative overflow-hidden w-full"
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl sm:text-2xl">🚀</span>
