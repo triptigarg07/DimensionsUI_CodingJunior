@@ -494,19 +494,21 @@ export default function Home() {
                   "L",
                   ";",
                   "'",
-                  "return",
+                  "⏎",
                 ].map((key, i) => (
                   <kbd
                     key={i}
-                    className="px-2 py-1 bg-dark-800 border border-white/20 rounded text-xs font-mono text-center"
+                    className={`px-1 sm:px-2 py-1 bg-dark-800 border border-white/20 rounded text-xs font-mono text-center ${
+                      key === "caps" || key === "⏎" ? "col-span-1" : ""
+                    }`}
                   >
                     {key}
                   </kbd>
                 ))}
               </div>
-              <div className="grid grid-cols-13 gap-1">
+              <div className="grid grid-cols-12 gap-1">
                 {[
-                  "shift",
+                  "⇧",
                   "Z",
                   "X",
                   "C",
@@ -517,11 +519,13 @@ export default function Home() {
                   ",",
                   ".",
                   "/",
-                  "shift",
+                  "⇧",
                 ].map((key, i) => (
                   <kbd
                     key={i}
-                    className="px-2 py-1 bg-dark-800 border border-white/20 rounded text-xs font-mono text-center"
+                    className={`px-1 sm:px-2 py-1 bg-dark-800 border border-white/20 rounded text-xs font-mono text-center ${
+                      key === "⇧" ? "col-span-1" : ""
+                    }`}
                   >
                     {key}
                   </kbd>
@@ -1196,13 +1200,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-2 mt-2">
+            <div className="flex flex-col sm:flex-row gap-2 mt-2">
               <input
                 type="text"
                 placeholder="Describe your comment..."
                 className="flex-1 px-3 py-2 rounded-lg bg-dark-900/80 border border-white/10 text-white text-xs focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
-              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-white font-semibold shadow-lg hover:scale-105 transition">
+              <button className="px-3 sm:px-4 py-2 rounded-lg bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-white font-semibold shadow-lg hover:scale-105 transition text-xs sm:text-sm whitespace-nowrap">
                 Submit
               </button>
             </div>
@@ -1255,7 +1259,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
-            className="glass-effect rounded-2xl p-8 flex flex-col gap-6 shadow-xl text-left mx-auto max-w-2xl"
+            className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left mx-auto max-w-2xl"
           >
             <div className="font-semibold text-white text-lg mb-1 flex items-center gap-2">
               <span className="text-xl">⏳</span> Cycles
@@ -1264,7 +1268,7 @@ export default function Home() {
               Goal-focused efficiency for sustained productivity.
             </div>
             {/* Floating stack of cycle cards */}
-            <div className="relative flex flex-col items-center justify-center h-52">
+            <div className="relative flex flex-col items-center justify-center h-40 sm:h-48 lg:h-52 w-full">
               {[2, 1, 0].map((i) => (
                 <motion.div
                   key={i}
@@ -1272,7 +1276,7 @@ export default function Home() {
                   whileInView={{ opacity: 0.3 + 0.35 * i, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.1 * i }}
                   viewport={{ once: true }}
-                  className={`absolute left-1/2 top-1/2 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-dark-900/80 border border-white/10 shadow-lg transition-all duration-300 ${
+                  className={`absolute left-1/2 top-1/2 w-64 sm:w-72 lg:w-80 max-w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-dark-900/80 border border-white/10 shadow-lg transition-all duration-300 ${
                     i === 2
                       ? "z-30 scale-105 opacity-100"
                       : i === 1
@@ -1284,16 +1288,18 @@ export default function Home() {
                     pointerEvents: i === 2 ? "auto" : "none",
                   }}
                 >
-                  <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10">
-                    <span className="font-semibold text-white">Cycle 2</span>
-                    <span className="ml-auto text-xs text-gray-400">
+                  <div className="flex items-center gap-2 px-3 sm:px-4 py-2 border-b border-white/10">
+                    <span className="font-semibold text-white text-sm sm:text-base">
+                      Cycle 2
+                    </span>
+                    <span className="ml-auto text-xs text-gray-400 whitespace-nowrap">
                       3 weekdays left
                     </span>
-                    <span className="ml-2 px-2 py-0.5 rounded bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-xs text-white">
+                    <span className="ml-1 sm:ml-2 px-1.5 sm:px-2 py-0.5 rounded bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-xs text-white whitespace-nowrap">
                       Active
                     </span>
                   </div>
-                  <div className="px-4 py-2 text-xs text-white/80">
+                  <div className="px-3 sm:px-4 py-2 text-xs text-white/80">
                     <div className="flex justify-between mb-1">
                       <span>Scope</span>
                       <span>132 · +64%</span>
@@ -1377,25 +1383,25 @@ export default function Home() {
               <span>anytime to get started</span>
             </div>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Multi-cloud Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-8 flex flex-col gap-6 shadow-xl text-left"
+              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">☁️</span>
-                <span className="font-semibold text-white text-lg">
+                <span className="text-xl sm:text-2xl">☁️</span>
+                <span className="font-semibold text-white text-base sm:text-lg">
                   Multi-cloud
                 </span>
               </div>
-              <div className="text-gray-300 mb-4">
+              <div className="text-gray-300 mb-4 text-sm sm:text-base">
                 Deploy your codebase to a cloud provider of your choice.
               </div>
-              <div className="bg-dark-800 rounded-lg p-4 font-mono text-xs text-left text-gray-200 leading-relaxed shadow-inner mb-4">
+              <div className="bg-dark-800 rounded-lg p-3 sm:p-4 font-mono text-xs text-left text-gray-200 leading-relaxed shadow-inner mb-4 overflow-x-auto">
                 <pre className="whitespace-pre">
                   <code>{`1 const stage = document.querySelector('svg')
 2 const hit = document.querySelector('di')
@@ -1411,19 +1417,19 @@ export default function Home() {
 `}</code>
                 </pre>
               </div>
-              <div className="flex gap-3 mb-4">
-                <button className="px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
+                <button className="px-3 sm:px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition text-sm">
                   ☁️ Vercel
                 </button>
-                <button className="px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition">
+                <button className="px-3 sm:px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition text-sm">
                   ☁️ Netlify
                 </button>
-                <button className="px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition">
+                <button className="px-3 sm:px-4 py-2 rounded-lg bg-dark-900 text-white border border-white/10 hover:bg-white/10 transition text-sm">
                   ☁️ Railway
                 </button>
               </div>
               <div className="flex flex-col items-center">
-                <button className="px-8 py-2 rounded-lg bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-white font-semibold shadow-lg hover:scale-105 transition">
+                <button className="px-6 sm:px-8 py-2 rounded-lg bg-gradient-to-r from-pink-400 via-pink-300 to-yellow-300 text-white font-semibold shadow-lg hover:scale-105 transition text-sm sm:text-base">
                   Deploy
                 </button>
               </div>
@@ -1434,15 +1440,15 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-8 flex flex-col gap-6 shadow-xl text-left relative overflow-hidden"
+              className="glass-effect rounded-2xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 shadow-xl text-left relative overflow-hidden"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">🚀</span>
-                <span className="font-semibold text-white text-lg">
+                <span className="text-xl sm:text-2xl">🚀</span>
+                <span className="font-semibold text-white text-base sm:text-lg">
                   View, manage, edit deployments
                 </span>
               </div>
-              <div className="text-gray-300 mb-4">
+              <div className="text-gray-300 mb-4 text-sm sm:text-base">
                 Everything you need to scale your cloud.
               </div>
               {/* Dotted/line background */}
@@ -1473,20 +1479,22 @@ export default function Home() {
                   />
                 ))}
               </svg>
-              <div className="relative z-10 flex flex-col gap-4">
-                <div className="bg-dark-900/80 rounded-xl p-4 shadow flex flex-col gap-1 border border-white/10">
+              <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
+                <div className="bg-dark-900/80 rounded-xl p-3 sm:p-4 shadow flex flex-col gap-1 border border-white/10">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">🌐</span>
-                    <span className="font-semibold text-white">Landing</span>
+                    <span className="text-base sm:text-lg">🌐</span>
+                    <span className="font-semibold text-white text-sm sm:text-base">
+                      Landing
+                    </span>
                     <span className="ml-auto text-xs text-gray-400">1</span>
                   </div>
                   <div className="text-xs text-gray-400">dimension.dev</div>
                   <div className="text-xs text-gray-500">5h ago via Vercel</div>
                 </div>
-                <div className="bg-dark-900/80 rounded-xl p-4 shadow flex flex-col gap-1 border border-white/10">
+                <div className="bg-dark-900/80 rounded-xl p-3 sm:p-4 shadow flex flex-col gap-1 border border-white/10">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">📄</span>
-                    <span className="font-semibold text-white">
+                    <span className="text-base sm:text-lg">📄</span>
+                    <span className="font-semibold text-white text-sm sm:text-base">
                       Documentation
                     </span>
                     <span className="ml-auto text-xs text-gray-400">2</span>
